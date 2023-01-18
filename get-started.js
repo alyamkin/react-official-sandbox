@@ -114,3 +114,45 @@ const element = Comment(commentData);
 root.render(element);
 
 */
+
+/**
+ * State and lifecycle
+ */
+
+/*
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}</h2>;
+}
+
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+    console.log("component was mounted");
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+    console.log("component was unmounted");
+  }
+
+  tick() {
+    this.setState({ date: new Date() });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <FormattedDate date={this.state.date} />
+      </div>
+    );
+  }
+}
+
+root.render(<Clock />);
+*/
