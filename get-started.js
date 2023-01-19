@@ -176,7 +176,7 @@ function Form() {
 
 root.render(<Form />);
 */
-
+/*
 class Toggle extends React.Component {
   constructor(props) {
     super(props);
@@ -206,3 +206,112 @@ class Toggle extends React.Component {
 }
 
 root.render(<Toggle />);
+*/
+
+/**
+ * Conditional rendering
+ */
+/*
+function UserGreeting() {
+  return <h1>Welcome back!</h1>;
+}
+
+function GuestGreeting() {
+  return <h1>Please sign up.</h1>;
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+
+  return isLoggedIn ? <UserGreeting /> : <GuestGreeting />;
+}
+
+function LoginButton(props) {
+  return <button onClick={props.onClick}>Login</button>;
+}
+
+function LogoutButton(props) {
+  return <button onClick={props.onClick}>Logout</button>;
+}
+
+function Button(props) {
+  const isLoggedIn = props.isLoggedIn;
+  const { loginHandler, logoutHandler } = props.onClickHandlers;
+
+  return isLoggedIn ? (
+    <LogoutButton onClick={logoutHandler} />
+  ) : (
+    <LoginButton onClick={loginHandler} />
+  );
+}
+
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoggedIn: false };
+
+    this.loginHandler = this.loginHandler.bind(this);
+    this.logoutHandler = this.logoutHandler.bind(this);
+  }
+
+  loginHandler() {
+    console.log("login");
+    this.setState({ isLoggedIn: true });
+  }
+
+  logoutHandler() {
+    this.setState({ isLoggedIn: false });
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    return (
+      <div>
+        <Greeting isLoggedIn={this.state.isLoggedIn} />
+        <Button
+          isLoggedIn={this.state.isLoggedIn}
+          onClickHandlers={{
+            loginHandler: this.loginHandler,
+            logoutHandler: this.logoutHandler,
+          }}
+        />
+      </div>
+    );
+  }
+}
+*/
+/*
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return <div className="warning">Warning!</div>;
+}
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showWarning: true };
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
+  handleToggleClick() {
+    this.setState((state) => ({
+      showWarning: !state.showWarning,
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? "NO" : "YES"}
+        </button>
+      </div>
+    );
+  }
+}
+root.render(<Page />);
+*/
