@@ -156,3 +156,53 @@ class Clock extends React.Component {
 
 root.render(<Clock />);
 */
+
+/**
+ * Handling events
+ */
+/*
+function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Form submitted");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+root.render(<Form />);
+*/
+
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    this.toggleHandler = this.toggleHandler.bind(this);
+  }
+
+  toggleHandler(id, e) {
+    console.log(e);
+    this.setState((prevState) => ({
+      isToggleOn: !prevState.isToggleOn,
+    }));
+  }
+
+  componentDidMount() {
+    this.toggleHandler();
+  }
+
+  render() {
+    return (
+      <button onClick={(e) => this.toggleHandler(89, e)}>
+        {this.state.isToggleOn ? "ON" : "OFF"}
+      </button>
+    );
+  }
+}
+
+root.render(<Toggle />);
