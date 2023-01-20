@@ -375,3 +375,193 @@ const posts = [
 root.render(<Blog posts={posts} />);
 
 */
+
+/**
+ * Forms
+ */
+
+/*
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+
+    this.handlerChange = this.handlerChange.bind(this);
+    this.handlerSubmit = this.handlerSubmit.bind(this);
+  }
+
+  handlerSubmit(event) {
+    console.log("A name was submitted: " + this.state.value);
+    event.preventDefault();
+    this.setState({ value: "" });
+  }
+
+  handlerChange(event) {
+    const value = event.target.value;
+
+    this.setState({ value: value });
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handlerSubmit}>
+        <label>name:</label>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={this.handlerChange}
+        />
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
+root.render(<NameForm />);
+
+
+class EssayForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "Please write an essay about your favorite DOM element.",
+    };
+
+    this.handlerChange = this.handlerChange.bind(this);
+    this.handlerSubmit = this.handlerSubmit.bind(this);
+  }
+
+  handlerSubmit(event) {
+    console.log("An essay was submitted: " + this.state.value);
+    event.preventDefault();
+    this.setState({ value: "" });
+  }
+
+  handlerChange(event) {
+    const value = event.target.value;
+
+    this.setState({ value: value });
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handlerSubmit}>
+        <label>name:</label>
+        <textarea
+          type="text"
+          value={this.state.value}
+          onChange={this.handlerChange}
+        />
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
+root.render(<EssayForm />);
+
+
+class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "lime",
+    };
+
+    this.handlerChange = this.handlerChange.bind(this);
+    this.handlerSubmit = this.handlerSubmit.bind(this);
+  }
+
+  handlerSubmit(event) {
+    console.log("An essay was submitted: " + this.state.value);
+    event.preventDefault();
+  }
+
+  handlerChange(event) {
+    const value = event.target.value;
+
+    this.setState({ value: value });
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handlerSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handlerChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
+root.render(<FlavorForm />);
+
+
+class ReservationForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: false,
+      numberOfGuests: 0,
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(
+      `is going : ${this.state.isGoing} - number of guests : ${this.state.numberOfGuests}`
+    );
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange}
+          />
+        </label>
+        <br />
+        <label>
+          Number of guests:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange}
+          />
+        </label>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
+root.render(<ReservationForm />);
+
+*/
